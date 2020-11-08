@@ -10,7 +10,6 @@ class ChartRepository @Inject constructor(private val api: BitcoinService) {
     fun fetchCharts(): Single<List<BitcoinChartResponse>> =
         Single.zip(
             api.fetchChart("market-price"),
-            api.fetchChart("transactions-per-second"),
             api.fetchChart("trade-volume"),
-            { t1, t2, t3 -> arrayListOf(t1, t2, t3) })
+            { t1, t2 -> arrayListOf(t1, t2) })
 }

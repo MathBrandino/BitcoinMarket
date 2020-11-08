@@ -31,7 +31,7 @@ class ChartViewModel(
                         _state.postValue(ChartInformationState.Loaded(it))
                     },
                     {
-                        _state.postValue(ChartInformationState.Error("${it.message}"))
+                        _state.postValue(ChartInformationState.Error)
                     }
                 )
         )
