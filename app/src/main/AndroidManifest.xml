@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BitcoinMarketApp">
-        <activity android:name=".ui.MainActivity">
+        <activity android:name="com.mathbrandino.bitcoin_market.view.chart.ui.ChartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
