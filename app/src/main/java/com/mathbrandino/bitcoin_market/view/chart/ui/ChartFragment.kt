@@ -10,8 +10,9 @@ import com.mathbrandino.bitcoin_market.R
 import com.mathbrandino.bitcoin_market.view.chart.adapter.ChartAdapter
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformation
 
-class ChartFragment private constructor() : Fragment() {
+class ChartFragment : Fragment() {
 
+    @Suppress("UNCHECKED_CAST")
     private val charts: ArrayList<ChartInformation>
         get() = arguments?.getSerializable(EXTRA_INFORMATION) as ArrayList<ChartInformation>
 
@@ -29,11 +30,10 @@ class ChartFragment private constructor() : Fragment() {
         return view
     }
 
-
     companion object {
         private const val EXTRA_INFORMATION = "EXTRA_INFORMATION";
 
-        fun create(charts: ArrayList<ChartInformation>): ChartFragment {
+        operator fun invoke(charts: ArrayList<ChartInformation>): ChartFragment {
             val bundle = Bundle()
             bundle.putSerializable(EXTRA_INFORMATION, charts)
             return ChartFragment().apply { arguments = bundle }

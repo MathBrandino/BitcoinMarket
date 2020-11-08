@@ -1,7 +1,6 @@
 package com.mathbrandino.bitcoin_market.view.chart.ui
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -25,18 +24,16 @@ class ChartActivity : AppCompatActivity() {
 
         viewModel.fetchChart()
 
-        viewModel.state.observe(this) {
-            val fragment = when (it) {
-                ChartInformationState.Loading -> LoadingFragment()
-                is ChartInformationState.Loaded -> ChartFragment.create(it.charts)
-                else -> Fragment()
-            }
-            show(fragment)
-        }
+        viewModel.state.observe(this) { state -> show(fragmentFrom(state)) }
+    }
+
+    private fun fragmentFrom(state: ChartInformationState): Fragment = when (state) {
+        ChartInformationState.Loading -> LoadingFragment()
+        is ChartInformationState.Loaded -> ChartFragment(state.charts)
+        else -> Fragment()
     }
 
     private fun show(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.chart_frame, fragment).commit()
     }
-
 }
