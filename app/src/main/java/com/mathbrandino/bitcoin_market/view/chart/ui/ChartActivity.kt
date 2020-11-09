@@ -9,9 +9,15 @@ import com.mathbrandino.bitcoin_market.view.ViewModelFactory
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformationState
 import com.mathbrandino.bitcoin_market.view.chart.viewmodel.ChartViewModel
 import dagger.android.AndroidInjection
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
-class ChartActivity : AppCompatActivity() {
+class ChartActivity : AppCompatActivity(), HasAndroidInjector {
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
     @Inject
     lateinit var factory: ViewModelFactory
@@ -30,10 +36,12 @@ class ChartActivity : AppCompatActivity() {
     private fun fragmentFrom(state: ChartInformationState): Fragment = when (state) {
         ChartInformationState.Loading -> LoadingFragment()
         is ChartInformationState.Loaded -> ChartFragment(state.charts)
-        else -> Fragment()
+        ChartInformationState.Error -> ErrorFragment()
     }
 
     private fun show(fragment: Fragment) {
         supportFragmentManager.beginTransaction().replace(R.id.chart_frame, fragment).commit()
     }
+
+    override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
 }

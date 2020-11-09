@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">BitcoinMarketApp</string>
     <string name="welcome">Welcome</string>
+    <string name="retry">Retry</string>
+    <string name="error_message">Unfortunately we can\'t find your graphics, but you can try again by clicking the button below</string>
 </resources>
