@@ -7,7 +7,7 @@ import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
 import com.mathbrandino.bitcoin_market.databinding.ChartItemBinding
 import com.mathbrandino.bitcoin_market.view.chart.custom.ChartGenerator
-import com.mathbrandino.bitcoin_market.view.chart.custom.DateTimeFormatter
+import com.mathbrandino.bitcoin_market.view.chart.mapper.DateTimeFormatter
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformation
 import org.threeten.bp.ZoneOffset
 

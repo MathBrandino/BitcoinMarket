@@ -1,4 +1,4 @@
-package com.mathbrandino.bitcoin_market.view.chart.custom
+package com.mathbrandino.bitcoin_market.view.chart.mapper
 
 import com.github.mikephil.charting.formatter.ValueFormatter
 import org.threeten.bp.LocalDateTime
