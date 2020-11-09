@@ -2,11 +2,11 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:layout_margin="16dp"
+    android:layout_height="@dimen/x20"
+    android:layout_margin="@dimen/x2"
     android:backgroundTint="@color/white"
-    app:cardCornerRadius="4dp"
-    app:cardElevation="8dp">
+    app:cardCornerRadius="@dimen/x0.5"
+    app:cardElevation="@dimen/x1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,9 +14,9 @@
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/chart"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_margin="8dp"
+            android:layout_width="@dimen/x0"
+            android:layout_height="@dimen/x0"
+            android:layout_margin="@dimen/x1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

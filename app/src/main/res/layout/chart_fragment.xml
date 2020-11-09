@@ -10,19 +10,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="24dp" />
+        app:layout_constraintGuide_begin="@dimen/x3" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="24dp" />
+        app:layout_constraintGuide_end="@dimen/x3" />
 
     <View
         android:id="@+id/chart_header"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/x0"
+        android:layout_height="@dimen/x20"
         android:background="@color/light_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,9 +30,9 @@
 
     <TextView
         android:id="@+id/welcome_text"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/x0"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/x2"
         android:text="@string/welcome"
         android:textColor="@color/white"
         android:textSize="40sp"
@@ -42,16 +42,15 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/chart_list"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="@dimen/x0"
+        android:layout_height="@dimen/x0"
+        android:layout_marginTop="@dimen/x2"
         android:nestedScrollingEnabled="true"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/welcome_text" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

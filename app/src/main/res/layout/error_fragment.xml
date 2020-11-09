@@ -5,8 +5,8 @@
     android:layout_height="match_parent">
 
     <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="@dimen/x0"
+        android:layout_height="@dimen/x0"
         app:layout_constraintBottom_toTopOf="@id/guideline_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,14 +20,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_end="160dp" />
+        app:layout_constraintGuide_end="@dimen/x20" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_end="24dp" />
+        app:layout_constraintGuide_end="@dimen/x3" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -35,14 +35,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="24dp" />
+        app:layout_constraintGuide_begin="@dimen/x3" />
 
 
     <TextView
         android:id="@+id/message_error"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:padding="16dp"
+        android:layout_width="@dimen/x0"
+        android:layout_height="@dimen/x0"
+        android:padding="@dimen/x2"
         android:text="@string/error_message"
         android:textAlignment="center"
         android:textColor="@color/black"
@@ -57,7 +57,7 @@
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/x2"
         android:text="@string/retry"
         android:textAllCaps="false"
         android:textColor="@color/light_blue"
