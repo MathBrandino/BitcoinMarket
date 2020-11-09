@@ -1,12 +1,11 @@
 package com.mathbrandino.bitcoin_market.view.chart.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.data.Entry
-import com.mathbrandino.bitcoin_market.R
+import com.mathbrandino.bitcoin_market.databinding.ChartItemBinding
 import com.mathbrandino.bitcoin_market.view.chart.custom.ChartGenerator
 import com.mathbrandino.bitcoin_market.view.chart.custom.DateTimeFormatter
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformation
@@ -17,7 +16,7 @@ class ChartAdapter(private val charts: ArrayList<ChartInformation>) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChartViewHolder {
         val view =
-            LayoutInflater.from(parent.context).inflate(R.layout.chart_item, parent, false)
+            ChartItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ChartViewHolder(view)
     }
 
@@ -26,12 +25,13 @@ class ChartAdapter(private val charts: ArrayList<ChartInformation>) :
 
     override fun getItemCount(): Int = charts.size
 
-    class ChartViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bind(chart: ChartInformation) {
-            val chartView = itemView.findViewById<LineChart>(R.id.chart)
-            configure(chartView)
-            chartView.data = ChartGenerator.generate(convertToListEntry(chart), chart.name)
-            chartView.animateXY(3000, 3000)
+    class ChartViewHolder(private val binding: ChartItemBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(chartInformation: ChartInformation) {
+            configure(binding.chart)
+            binding.chart.data =
+                ChartGenerator.generate(convertToListEntry(chartInformation), chartInformation.name)
+            binding.chart.animateXY(3000, 3000)
         }
 
         private fun convertToListEntry(chart: ChartInformation): List<Entry> = chart.entries.map {

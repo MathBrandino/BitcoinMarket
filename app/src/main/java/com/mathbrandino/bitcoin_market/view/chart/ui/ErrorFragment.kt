@@ -5,11 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.jakewharton.rxbinding4.view.clicks
-import com.mathbrandino.bitcoin_market.R
+import com.mathbrandino.bitcoin_market.databinding.ErrorFragmentBinding
 import com.mathbrandino.bitcoin_market.view.ViewModelFactory
 import com.mathbrandino.bitcoin_market.view.chart.viewmodel.ChartViewModel
 import dagger.android.support.AndroidSupportInjection
@@ -31,17 +30,16 @@ class ErrorFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.error_fragment, container, false)
-
+        val view = ErrorFragmentBinding.inflate(inflater, container, false)
         val viewModel = ViewModelProvider(activity!!, factory)[ChartViewModel::class.java]
 
-        view.findViewById<Button>(R.id.retry_button)
+        view.retryButton
             .clicks()
             .throttleFirst(10, TimeUnit.SECONDS)
             .subscribe {
                 viewModel.fetchChart()
             }
 
-        return view
+        return view.root
     }
 }
