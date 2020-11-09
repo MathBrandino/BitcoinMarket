@@ -1,6 +1,5 @@
 package com.mathbrandino.bitcoin_market.view.chart.mapper
 
-import com.mathbrandino.bitcoin_market.view.chart.mapper.DateTimeFormatter
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
