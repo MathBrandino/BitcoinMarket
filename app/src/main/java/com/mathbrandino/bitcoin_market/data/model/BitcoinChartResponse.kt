@@ -10,7 +10,6 @@ data class BitcoinChartResponse(
     @SerializedName("values") val entries: List<ChartEntry>
 )
 
-
 data class ChartEntry(
     @SerializedName("x") val timestamp: Long,
     @SerializedName("y") val value: Double,

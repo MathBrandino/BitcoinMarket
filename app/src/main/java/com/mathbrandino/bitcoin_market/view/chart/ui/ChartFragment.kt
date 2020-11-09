@@ -24,7 +24,6 @@ class ChartFragment : Fragment() {
         val view = inflater.inflate(R.layout.chart_fragment, container, false)
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.chart_list)
-
         recyclerView.adapter = ChartAdapter(charts = charts)
 
         return view

@@ -5,7 +5,6 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 
 object ChartGenerator {
-
     fun generate(entries: List<Entry>, name: String): LineData {
         val lineDataSet = LineDataSet(entries, name).apply {
             setDrawValues(false)

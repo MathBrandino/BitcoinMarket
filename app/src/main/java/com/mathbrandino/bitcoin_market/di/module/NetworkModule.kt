@@ -19,7 +19,6 @@ class NetworkModule {
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
 
-
     @Provides
     @Singleton
     fun getBitcoinService(retrofit: Retrofit): BitcoinService =

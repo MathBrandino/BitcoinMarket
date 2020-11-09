@@ -13,7 +13,6 @@ class BitcoinMarketApplication : Application(), HasAndroidInjector {
     @Inject
     lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
-
     override fun onCreate() {
         super.onCreate()
         AndroidThreeTen.init(this)

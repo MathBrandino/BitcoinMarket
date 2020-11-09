@@ -9,7 +9,6 @@ import org.threeten.bp.ZoneOffset
 import java.math.BigDecimal
 
 object ChartInformationMapper {
-
     fun map(chartResponse: BitcoinChartResponse): ChartInformation {
         return ChartInformation(
             name = chartResponse.name,

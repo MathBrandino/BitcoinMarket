@@ -1,4 +1,4 @@
-package com.mathbrandino.bitcoin_market.view.chart.mapper
+package com.mathbrandino.bitcoin_market.view.chart.builder
 
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformation
 import com.mathbrandino.bitcoin_market.view.chart.model.Entry

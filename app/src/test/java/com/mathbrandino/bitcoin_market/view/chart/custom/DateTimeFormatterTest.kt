@@ -1,7 +1,7 @@
 package com.mathbrandino.bitcoin_market.view.chart.custom
 
-import org.junit.Test
 import org.junit.Assert.assertEquals
+import org.junit.Test
 
 class DateTimeFormatterTest {
     @Test

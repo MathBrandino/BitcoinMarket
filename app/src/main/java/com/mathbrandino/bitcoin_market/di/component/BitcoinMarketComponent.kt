@@ -10,13 +10,15 @@ import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [
-    AndroidInjectionModule::class,
-    NetworkModule::class,
-    ViewModelModule::class,
-    ActivitiesModule::class,
-    FragmentsModule::class
-])
+@Component(
+    modules = [
+        AndroidInjectionModule::class,
+        NetworkModule::class,
+        ViewModelModule::class,
+        ActivitiesModule::class,
+        FragmentsModule::class
+    ]
+)
 interface BitcoinMarketComponent {
     fun inject(app: BitcoinMarketApplication)
 }

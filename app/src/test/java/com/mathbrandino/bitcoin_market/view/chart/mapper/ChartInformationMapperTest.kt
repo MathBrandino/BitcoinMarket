@@ -2,6 +2,7 @@ package com.mathbrandino.bitcoin_market.view.chart.mapper
 
 import com.mathbrandino.bitcoin_market.data.model.BitcoinChartResponse
 import com.mathbrandino.bitcoin_market.data.model.ChartEntry
+import com.mathbrandino.bitcoin_market.view.chart.builder.ChartInformationBuilder
 import org.junit.Assert
 import org.junit.Test
 

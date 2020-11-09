@@ -3,10 +3,10 @@ package com.mathbrandino.bitcoin_market.view.chart.viewmodel
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.lifecycle.Observer
 import com.mathbrandino.bitcoin_market.data.model.BitcoinChartResponse
-import com.mathbrandino.bitcoin_market.data.model.ChartEntry
 import com.mathbrandino.bitcoin_market.data.repository.ChartRepository
 import com.mathbrandino.bitcoin_market.view.chart.RxSchedulerRule
-import com.mathbrandino.bitcoin_market.view.chart.mapper.ChartInformationBuilder
+import com.mathbrandino.bitcoin_market.view.chart.builder.BitcoinChartResponseBuilder
+import com.mathbrandino.bitcoin_market.view.chart.builder.ChartInformationBuilder
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformation
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformationState
 import com.mathbrandino.bitcoin_market.view.chart.model.ChartInformationState.*
@@ -41,20 +41,9 @@ class ChartViewModelTest {
     fun setUp() {
         MockitoAnnotations.initMocks(this)
         viewModel = ChartViewModel(repository)
-
-        response = BitcoinChartResponse(
-            status = "ok",
-            name = "Market Price",
-            period = "Day",
-            description = "Some Description",
-            entries = arrayListOf(
-                ChartEntry(timestamp = 1573257600, value = 8766.04)
-            )
-        )
-
+        response = BitcoinChartResponseBuilder.build()
         list = arrayListOf(ChartInformationBuilder.build())
     }
-
 
     @Test
     fun `should emits the loading and after the loaded states without error`() {
